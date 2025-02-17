@@ -14,9 +14,9 @@ h1 {
 }
 
 button {
-  font-size: 1.55rem;
+  font-size: 1rem;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 12px 18px;
   color: white;
   border: none;
   border-radius: 5px;
@@ -32,12 +32,28 @@ button {
   background-color: rgb(4, 196, 4);
 }
 
+.edit-button {
+  background-color: rgb(13, 34, 44);
+}
+
+.edit-button:hover {
+  background-color: rgb(74, 69, 69);
+}
+
+.save-button {
+  background-color: rgb(120, 128, 26);
+}
+
+.save-button:hover {
+  background-color: rgb(185, 221, 24);
+}
+
 .delete-button {
   background-color: rgb(216, 7, 7);
 }
 
 .delete-button:hover {
-  background-color: rgb(251, 30, 30);
+  background-color: rgb(253, 63, 63);
 }
 
 .move-button {
@@ -49,7 +65,7 @@ button {
 }
 
 input[type="text"] {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   padding: 10px;
   border: 2px;
   border: 2px solid rgba(197, 197, 197, 0.841);
@@ -65,7 +81,7 @@ ol {
 }
 
 li {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
   padding: 15px;
   width: 600px;
@@ -79,10 +95,13 @@ li {
 
 .text {
   flex: 1;
+  text-align: left;
 }
 
 .delete-button,
-.move-button {
+.move-button,
+.edit-button
+ {
   padding: 8px 12px;
   font-size: 1rem;
   margin-left: 10px;
