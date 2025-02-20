@@ -94,7 +94,6 @@ export default function ToDoList() {
 
         <ol>
           {tasks.map((task, index) => (
-            /* чекбокс */
             <li
               key={index}
               style={{
