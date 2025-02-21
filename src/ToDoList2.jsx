@@ -6,13 +6,15 @@ const TODOS = [
   { id: 3, title: "Купить кофе", isCompleted: false },
   { id: 4, title: "Помыть авто", isCompleted: false },
   { id: 1, title: "Пожарить гвоздей", isCompleted: false },
-  { id: 2, title: "Выбросить мусор", isCompleted: false },
+  { id: 6, title: "Выбросить мусор", isCompleted: false },
+  { id: 5, title: "Разогнать голубей", isCompleted: false },
+  { id: 2, title: "Read a book", isCompleted: false },
 ];
 
 export default function ToDoList() {
   const [tasks, setTasks] = useState(TODOS);
   // const input = useInput(); //кастомный хук (Минин)
-  const [directionSort, serDirectionSort] = useState(true);
+  const [directionSort, setDirectionSort] = useState(true); //сорт по алф
   // const [newTask, setNewTask] = useState("");
   // const [editId, setEditId] = useState(null);
   // const [editTask, setEditTask] = useState("");
@@ -23,9 +25,13 @@ export default function ToDoList() {
   //   setEditTask(event.target.value);
   // }
 
+  function deleteTask(id) {
+    const updatedTasks = tasks.filter((item) => item.id !== id);
+    setTasks(updatedTasks);
+  }
+
   function addTask(newTaskTitle) {
     const trimmedNewTask = newTaskTitle.trim();
-
     if (trimmedNewTask) {
       setTasks((prevState) => [
         ...prevState,
@@ -51,12 +57,7 @@ export default function ToDoList() {
     );
   }
 
-  function deleteTask(id) {
-    const updatedTasks = tasks.filter((item) => item.id !== id);
-    setTasks(updatedTasks);
-  }
-
-  // Сорт А - Я и Я - А
+  // Сорт А - Я / Я - А
   function sortedTasks() {
     const sortedTasks = [...tasks].sort(
       (a, b) =>
@@ -65,25 +66,27 @@ export default function ToDoList() {
           : b.title.localeCompare(a.title) // Я - А
     );
     setTasks(sortedTasks);
-    serDirectionSort(!directionSort); // Меняем направление сортировки
+    setDirectionSort(!directionSort); // меняем сорт
+  }
+
+  // Сорт id
+  function sortedId() {
+    const sortedId = [...tasks].sort((a, b) => a.id - b.id);
+    setTasks(sortedId);
   }
 
   return (
     <div className="to-do-list">
       <h1>To-Do-List</h1>
       <div>
-        {/* <input
-          placeholder="Enter a task..."
-          value={newTask}
-          onChange={handleInputChange}
-        />
-        <button className="add-button" onClick={addTask}>
-          Add
-        </button> */}
         <Input addTask={addTask} />
 
         <button onClick={sortedTasks} style={{ color: "black" }}>
           A-Я / Я-А
+        </button>
+
+        <button onClick={sortedId} style={{ backgroundColor: "orange" }}>
+          Сортировать по ID
         </button>
 
         <ol>
@@ -97,7 +100,7 @@ export default function ToDoList() {
               <input
                 type="checkbox"
                 checked={task.isCompleted}
-                onChange={() => toggleTaskCompletion(task.id)}
+                onChange={() => toggleTaskCompletion(task.id)} // знаю, чекбокс должен быть в комп Input
                 // className="control"
                 // {...input}
               />

@@ -15,6 +15,10 @@ export const Input = ({ addTask }) => {
         value={newTask}
         onChange={handleInputChange}
       />
+      {/* <input
+        type="checkbox" checked={task.isCompleted}
+        onChange={() => toggleTaskCompletion(task.id)}
+        /> */}
       <button
         className="add-button"
         onClick={() => {
