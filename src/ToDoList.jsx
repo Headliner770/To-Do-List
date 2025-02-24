@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function ToDoList() {
   const [tasks, setTasks] = useState([
@@ -94,7 +94,6 @@ export default function ToDoList() {
 
         <ol>
           {tasks.map((task, index) => (
-            /* чекбокс */
             <li
               key={index}
               style={{
