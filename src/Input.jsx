@@ -8,6 +8,8 @@ export const Input = ({ addTask }) => {
     setNewTask(event.target.value);
   }
 
+  
+
   return (
     <>
       <input
