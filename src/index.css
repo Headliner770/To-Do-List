@@ -5,7 +5,7 @@ body {
 .to-do-list {
   font-family: Arial, sans-serif;
   text-align: center;
-  margin-top: 100px;
+  margin: 100px;
 }
 
 h1 {
@@ -16,7 +16,8 @@ h1 {
 button {
   font-size: 1rem;
   font-weight: bold;
-  padding: 12px 18px;
+  padding: 6px 10px;
+  margin: 2px;
   color: white;
   border: none;
   border-radius: 5px;
@@ -64,9 +65,9 @@ button {
   background-color: rgb(124, 150, 255);
 }
 
-input[type="text"] {
-  font-size: 1.2rem;
-  padding: 10px;
+input {
+  font-size: 1rem;
+  padding: 4px;
   border: 2px;
   border: 2px solid rgba(197, 197, 197, 0.841);
   border-radius: 5px;
@@ -81,10 +82,10 @@ ol {
 }
 
 li {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  padding: 15px;
-  width: 600px;
+  padding: 5px;
+  width: 700px;
   background-color: #f1f1f1;
   margin-bottom: 12px;
   border: 3px solid rgb(218, 218, 218);
@@ -100,9 +101,8 @@ li {
 
 .delete-button,
 .move-button,
-.edit-button
- {
-  padding: 8px 12px;
+.edit-button {
+  padding: 6px 6px;
   font-size: 1rem;
   margin-left: 10px;
 }
